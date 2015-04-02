@@ -9,25 +9,41 @@ double Trapm(double, int, double[]);
 int main(){
    double a, b, *y;
    int n;
-   cout<<"Enter the value of a: ";
+   cout << "Problem 1" << endl << "Enter the value of a: ";
    cin>>a;
    cout<<"Enter the value of b: ";
    cin>>b;
-   cout<<"Enter the value of n: ";
-   cin>>n;
+   cout << endl;
+   bool first = true;
+   char cont = 'y';
 
-   y = new double[n];
+   while (cont == 'y'){
 
-   double h = (b-a)/n;
-   for(int i = 0; i < n; i++){
-      y[i] = f(a+i*h);
+	   cout << "Enter the value of n: ";
+	   cin >> n;
+	   cout << endl;
+
+	   y = new double[n];
+
+	   double h = (b - a) / n;
+	   for (int i = 0; i < n; i++){
+		   y[i] = f(a + i*h);
+	   }
+	   double I = Trapm(h, n, y);
+	   cout << "a: " << a << endl;
+	   cout << "b: " << b << endl;
+	   cout << "n: " << n << endl;
+	   cout << "h: " << h << endl;
+	   cout << "I: " << I << endl;
+
+	   cout << endl << "Continue?(y/n)";
+	   cin >> cont;
+	   
+	   
+
+
+
    }
-   double I = Trapm(h, n, y);
-   cout<<"a: "<<a<<endl;
-   cout<<"b: "<<b<<endl;
-   cout<<"n: "<<n<<endl;
-   cout<<"h: "<<h<<endl;
-   cout<<"I: "<<I<<endl;
    return 0;
 }
 
@@ -42,7 +58,7 @@ double Trapm(double h, int n, double f[]){
 }
 
 double f(double x){
-	return sqrt(9.8*68.1 / 0.25)*tanh(sqrt(9.8*0.25 / 68.1)*x);
+	return (sqrt(9.8*68.1 / 0.25)*log(cosh(sqrt(9.8*0.25 / 68.1)*x))) / sqrt(9.8*0.25 / 68.1);
 }
 
 double g(double x){
