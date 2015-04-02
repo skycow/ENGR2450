@@ -17,11 +17,12 @@ int main(){
 	y = new double[n+1];
 
 	double h = (b - a) / n;
+
 	for (int i = 0; i < n+1; i++){
 		cout << "Enter value " << i + 1 << ":";
 		cin >> y[i];
 	}
-	double I = Trapm(h, n, y);
+	double I = Trapm(h, n+1, y);
 	cout << "a: " << a << endl;
 	cout << "b: " << b << endl;
 	cout << "n: " << n << endl;

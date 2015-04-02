@@ -3,7 +3,6 @@
 using namespace std;
 
 double f(double);
-double g(double);
 double Trapm(double, int, double[]);
 
 int main(){
@@ -14,7 +13,6 @@ int main(){
    cout<<"Enter the value of b: ";
    cin>>b;
    cout << endl;
-   bool first = true;
    char cont = 'y';
 
    while (cont == 'y'){
@@ -23,13 +21,13 @@ int main(){
 	   cin >> n;
 	   cout << endl;
 
-	   y = new double[n];
+	   y = new double[n+1];
 
 	   double h = (b - a) / n;
-	   for (int i = 0; i < n; i++){
+	   for (int i = 0; i < n+1; i++){
 		   y[i] = f(a + i*h);
 	   }
-	   double I = Trapm(h, n, y);
+	   double I = Trapm(h, n+1, y);
 	   cout << "a: " << a << endl;
 	   cout << "b: " << b << endl;
 	   cout << "n: " << n << endl;
@@ -52,5 +50,5 @@ double Trapm(double h, int n, double f[]){
 }
 
 double f(double x){
-	return (sqrt(9.8*68.1 / 0.25)*log(cosh(sqrt(9.8*0.25 / 68.1)*x))) / sqrt(9.8*0.25 / 68.1);
+	return (sqrt(9.8*68.1 / 0.25)*tanh(sqrt(9.8*0.25 / 68.1)*x));
 }
