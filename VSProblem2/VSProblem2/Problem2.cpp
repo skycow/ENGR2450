@@ -37,7 +37,7 @@ double Trapm(double h, int n, double f[]){
 		sum = sum + 2 * f[i];
 	}
 	sum = (sum + f[n - 1]);
-	return (h + sum / 2);
+	return (h * sum / 2);
 
 }
 
