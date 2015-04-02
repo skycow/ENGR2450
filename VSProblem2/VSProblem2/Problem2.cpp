@@ -7,6 +7,7 @@ double Trapm(double, int, double[]);
 int main(){
 	double a, b, *y;
 	int n;
+	cout << "Problem 2" << endl;
 	cout << "Enter the value of a: ";
 	cin >> a;
 	cout << "Enter the value of b: ";
@@ -19,7 +20,7 @@ int main(){
 	double h = (b - a) / n;
 
 	for (int i = 0; i < n+1; i++){
-		cout << "Enter value " << i + 1 << ":";
+		cout << "Enter value " << i + 1 << ": ";
 		cin >> y[i];
 	}
 	double I = Trapm(h, n+1, y);
