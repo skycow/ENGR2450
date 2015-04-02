@@ -38,11 +38,6 @@ int main(){
 
 	   cout << endl << "Continue?(y/n)";
 	   cin >> cont;
-	   
-	   
-
-
-
    }
    return 0;
 }
@@ -53,21 +48,9 @@ double Trapm(double h, int n, double f[]){
       sum = sum + 2 * f[i];
    }
    sum = (sum + f[n-1]);
-   return (h + sum/2);
-
+   return (h * sum/2);
 }
 
 double f(double x){
 	return (sqrt(9.8*68.1 / 0.25)*log(cosh(sqrt(9.8*0.25 / 68.1)*x))) / sqrt(9.8*0.25 / 68.1);
 }
-
-double g(double x){
-   double pi = 3.141592654;
-   double sum = 0.0;
-   for(int j =0; j <= 5; j++){
-      //insert function here
-      sum = sum + 2/(j+1);
-   }
-   return sum;
-}
-
