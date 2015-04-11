@@ -8,7 +8,7 @@ int main(){
 	int n;
 	double *x, *y;
 
-	cout << "Problem 5" << endl;
+	cout << "Problem 6" << endl;
 	cout << "Enter the value of n: ";
 	cin >> n;
 
